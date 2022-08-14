@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+const title = "default title";
+const description = "default description";
+const og_image = "og_image";
+const keywords = "keywords, wew, wew ";
+---
+
+<Layout title={title} og_image={og_image} keywords={keywords} description={description}>
+	<main>
+	<Card title="Astro + Tailwind startkit made by Cambio Network" />
+	</main>
+</Layout>

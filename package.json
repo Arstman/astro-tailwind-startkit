@@ -1,0 +1,23 @@
+{
+  "name": "@example/basics",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "concurrently \"astro dev\" \"npm run tailwind:watch\"",
+    "tailwind:watch": "cross-env TAILWIND_MODE=watch cross-env NODE_ENV=development postcss src/styles/app.css -o public/app.css -w",
+    "tailwind:build": "cross-env TAILWIND_MODE=build cross-env NODE_ENV=production postcss src/styles/app.css -o public/app.css",
+    "build": "npm run tailwind:build && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "astro": "^1.0.5",
+    "autoprefixer": "^10.4.8",
+    "concurrently": "^7.3.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.1",
+    "postcss-cli": "^10.0.0",
+    "tailwindcss": "^3.1.8"
+  }
+}
