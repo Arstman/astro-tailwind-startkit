@@ -1,0 +1,70 @@
+---
+const { frontmatter } = Astro.props;
+const site_url = 'https://cambio.network';
+const site_name = 'Cambio Network';
+const { title, description, keywords, og_image } = frontmatter;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="applicable-device" content="pc,mobile" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta property="og:type" content="website" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={og_image} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={site_url} />
+		<meta property="og:site_name" content={site_name} />
+		<link rel="stylesheet" href="/app.css" />
+		<link rel="canonical" href={site_url} />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<title>{title}</title>
+		<link href="/app.css" rel="stylesheet" type="text/css" />
+		<script is:inline>
+			/*Cambio Network 技术支持 */ (function () {
+				try {
+					if (!document.documentElement.hasAttribute('data-pg-ia-disabled')) {
+						window.pgia_small_mq =
+							typeof pgia_small_mq == 'string' ? pgia_small_mq : '(max-width:767px)';
+						window.pgia_large_mq =
+							typeof pgia_large_mq == 'string' ? pgia_large_mq : '(min-width:768px)';
+						var style = document.createElement('style');
+						var pgcss =
+							'html:not(.pg-ia-no-preview) [data-pg-ia-hide=""] {opacity:0;visibility:hidden;}html:not(.pg-ia-no-preview) [data-pg-ia-show=""] {opacity:1;visibility:visible;display:block;}';
+						if (
+							document.documentElement.hasAttribute('data-pg-id') &&
+							document.documentElement.hasAttribute('data-pg-mobile')
+						) {
+							pgia_small_mq = '(min-width:0)';
+							pgia_large_mq = '(min-width:99999px)';
+						}
+						pgcss +=
+							'@media ' +
+							pgia_small_mq +
+							'{ html:not(.pg-ia-no-preview) [data-pg-ia-hide="mobile"] {opacity:0;visibility:hidden;}html:not(.pg-ia-no-preview) [data-pg-ia-show="mobile"] {opacity:1;visibility:visible;display:block;}}';
+						pgcss +=
+							'@media ' +
+							pgia_large_mq +
+							'{html:not(.pg-ia-no-preview) [data-pg-ia-hide="desktop"] {opacity:0;visibility:hidden;}html:not(.pg-ia-no-preview) [data-pg-ia-show="desktop"] {opacity:1;visibility:visible;display:block;}}';
+						style.innerHTML = pgcss;
+						document.querySelector('head').appendChild(style);
+					}
+				} catch (e) {
+					console && console.log(e);
+				}
+			})();
+		</script>
+	</head>
+
+	<body>
+		<main class="prose prose-slate prose-img:rounded-xl px-4 m-auto py-36">
+			<slot />
+		</main>
+		<script is:inline src="/pgia.js"></script>
+	</body>
+</html>
