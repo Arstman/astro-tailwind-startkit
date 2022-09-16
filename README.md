@@ -1,4 +1,12 @@
-# Welcome to [Astro](https://astro.build)
+# Astro + TailwindCSS Startkit
+
+## Why
+
+There are many startkit for astro with TailwindCSS, but most of them render the style code into pages an components, which means there will be a lot duplicated in-line css code, and also this might not good for SEO.
+
+So this repo render all necessary style code into a single css file, and link it from `index.html`. 
+
+
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
 
