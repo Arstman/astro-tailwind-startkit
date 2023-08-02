@@ -7,6 +7,19 @@ There are many startkit for astro with TailwindCSS, but most of them render the 
 So this repo render all necessary style code into a single css file, and link it from `index.html`. 
 
 
+## How-to upgrade
+
+use `npm-check-updates` tool 
+```bash
+npm install -g npm-check-updates
+
+```
+and then in the root directory of this project 
+```bash 
+ncu -u
+
+```
+
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
 
